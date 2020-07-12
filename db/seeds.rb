@@ -4,6 +4,8 @@
 # Examples:
 #
 
-product = Product.new(name: "Nintendo Switch", price: 299, image_url: "https://i.gadgets360cdn.com/products/large/1549526400_635_nintendo_switch_db.jpg", description: "Introducing Nintendo Switch, the new home video game system from Nintendo. In addition to providing single and multiplayer thrills at home, the Nintendo Switch system can be taken on the go so players can enjoy a full home console experience anytime, anywhere.")
+products = Product.where(supplier_id: nil)
 
-product.save
+products.each do |product|
+  supplier_id = Supplier.all.sample.supplier_id
+end
