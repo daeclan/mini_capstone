@@ -1,4 +1,5 @@
 class Api::ProductsController < ApplicationController
+  before_action :authenticate_admin, only: [:create]
   protect_from_forgery with: :null_session
 
   def index
